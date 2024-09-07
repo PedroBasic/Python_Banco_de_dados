@@ -87,12 +87,14 @@ if __name__ == '__main__':
 
         def iniciar(self):
         # Herói ataca o monstro
+            # O '0' representado e para que o hp do Montro não fique negativo. O mesmo e utilizado para o Heroi.
             ataque_heroi = self.heroi.atacar()
             defesa_monstro = self.monstro.defender()            
             dano_monstro = max(ataque_heroi - defesa_monstro, 0)
             self.monstro.perder_vida(dano_monstro)
             
         # Monstro defende
+            # O '0' representado e para que o hp do Heroi não fique negativo. O mesmo e utilizado para o Monstro.
             defesa_heroi = self.heroi.defender()
             ataque_monstro = self.monstro.atacar()
             dano_heroi = max(ataque_monstro - defesa_heroi, 0)
